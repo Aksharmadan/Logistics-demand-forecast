@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.egg-info/
+dist/
+build/
+
+# Local SQLite (dev)
+backend/local.db
+
+# ML artifacts
+backend/artifacts/*.joblib
+backend/artifacts/*.json
+!backend/artifacts/.gitkeep
+
+# Node
+frontend/node_modules/
+frontend/dist/
+web/node_modules/
+web/.next/
+web/.env.local
+*.log
+.DS_Store
+
+# IDE
+.idea/
+.vscode/

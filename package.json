@@ -1,0 +1,13 @@
+{
+  "name": "logistics-demand-forecast",
+  "private": true,
+  "description": "Run API + Next.js from repo root",
+  "scripts": {
+    "setup": "test -f web/.env.local || cp .env.example web/.env.local",
+    "dev": "npm run setup && (test -d web/node_modules || npm --prefix web install) && npm --prefix web run dev",
+    "dev:web": "npm --prefix web run dev",
+    "dev:api": "cd backend && if [ -x .venv/bin/python ]; then exec .venv/bin/python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000; else exec python3 -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000; fi",
+    "install:all": "npm --prefix web install && npm --prefix frontend install",
+    "bootstrap:backend": "cd backend && (test -d .venv || python3 -m venv .venv) && .venv/bin/pip install -U pip && .venv/bin/pip install -r requirements.txt"
+  }
+}
