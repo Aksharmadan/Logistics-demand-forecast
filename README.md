@@ -252,3 +252,5 @@ Legacy Vite: root **`frontend`**, output **`dist`**, env `VITE_API_URL`.
 ---
 
 **Repository root:** `logistics-demand-forecast` under your `Projects` folder. The Cursor workspace root was moved to this project for implementation.
+
+**GitHub:** [https://github.com/Aksharmadan/Logistics-demand-forecast](https://github.com/Aksharmadan/Logistics-demand-forecast)
