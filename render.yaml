@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: logistics-demand-forecast-api
+    env: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "10080"
