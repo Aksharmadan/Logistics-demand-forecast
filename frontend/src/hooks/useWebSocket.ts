@@ -12,7 +12,11 @@ export function useWebSocket(url: string) {
   const connect = useCallback(() => {
     if (unmounted.current) return;
     try {
-      const socket = new WebSocket(url);
+      const token = localStorage.getItem("lf_token");
+      const socketUrl = token
+        ? `${url}${url.includes("?") ? "&" : "?"}token=${encodeURIComponent(token)}`
+        : url;
+      const socket = new WebSocket(socketUrl);
       ws.current = socket;
 
       socket.onopen = () => { if (!unmounted.current) setIsConnected(true); };
